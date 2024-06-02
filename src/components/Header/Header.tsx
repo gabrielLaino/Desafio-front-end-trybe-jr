@@ -5,7 +5,7 @@ function Header () {
   return (
     <header>
       <img src={trybeLogo} alt="Logo da Trybe" />
-      <h1>Trybe News</h1>
+      <h1 className='titulo-principal'>Trybe News</h1>
     </header>
   )
 }
