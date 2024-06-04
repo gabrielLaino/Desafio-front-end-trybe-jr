@@ -13,3 +13,8 @@ vou subir um build desse projeto e tambem para rodar use as instruções abaixo:
 # npm run dev 
 
 pronto pode testar esse app lindo 
+# link para o biuld do porjeto:
+
+https://ibgenews-gabriels-projects-bc996f97.vercel.app/
+
+
