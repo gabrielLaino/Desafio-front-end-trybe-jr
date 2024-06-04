@@ -1,13 +1,20 @@
 import { useEffect } from "react";
+import NoticiaFavorita from "../components/NoticiaFavorita/NoticiaFavorita";
+import Header from "../components/Header/Header";
+import Nav from "../components/Nav/Nav";
+import Footer from "../components/Footer/Footer";
 
 function Favoritas () {
   useEffect(() => {
     document.title = 'Favoritas'
   }, [])
   return (
-    <div>
-      <h1>Em construção</h1>
-    </div>
+    <>
+      <Header />
+      <Nav />
+      <NoticiaFavorita />
+      <Footer />
+    </>
   )
 }
 

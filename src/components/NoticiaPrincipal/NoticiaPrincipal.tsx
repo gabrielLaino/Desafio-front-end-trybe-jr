@@ -6,7 +6,7 @@ import FavoritoContext from "../../context/FavortiosContext";
 function NoticiaPrincipal() {
   const [noticias, setNoticias] = useState<IbgeType[]>([]);
   const [img, setImg] = useState<IbgeImg>();
-  const {isFavorite, handleClick, novas, news} = useContext(FavoritoContext)
+  const {isFavorite, handleClick, novas} = useContext(FavoritoContext)
 
   useEffect(() => {
     const fetchNoticias = async () => {
@@ -27,7 +27,6 @@ function NoticiaPrincipal() {
 
   function changeFavorito () {
     handleClick();
-    console.log(news);
     novas(noticias[0]);
   }
 
