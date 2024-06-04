@@ -10,6 +10,7 @@ export type IbgeType = {
   imagens: string,
   destaque: boolean,
   link: string,
+  isFavorite: boolean,
 }
 
 export type IbgeComplete = {

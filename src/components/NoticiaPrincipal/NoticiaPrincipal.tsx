@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IbgeComplete, IbgeImg, IbgeType } from '../../types';
 import './NoticiaPrincipal.css'
+import FavoritoContext from "../../context/FavortiosContext";
 
 function NoticiaPrincipal() {
   const [noticias, setNoticias] = useState<IbgeType[]>([]);
   const [img, setImg] = useState<IbgeImg>();
+  const {isFavorite, handleClick, novas, news} = useContext(FavoritoContext)
 
   useEffect(() => {
     const fetchNoticias = async () => {
@@ -23,6 +25,12 @@ function NoticiaPrincipal() {
     fetchNoticias();
   }, []);
 
+  function changeFavorito () {
+    handleClick();
+    console.log(news);
+    novas(noticias[0]);
+  }
+
 
   return (
     <div className="noticia-principal">
@@ -39,7 +47,8 @@ function NoticiaPrincipal() {
         <article>{noticias.length > 0 ? noticias[0]?.introducao : "Carregando..."}</article>
         <div className="baixo">
           <p>{noticias.length > 0 ? noticias[0]?.data_publicacao : "Carregando..."}</p>
-          <button><a href={noticias.length > 0 ? noticias[0]?.link : "Carregando..."}>Ler noticia aqui</a></button>
+          <p className={isFavorite ? 'favorito' : 'notfavorito'} onClick={changeFavorito}>&hearts;</p>
+          <button className="link"><a href={noticias.length > 0 ? noticias[0]?.link : "Carregando..."}>Ler noticia aqui</a></button>
         </div>
       </div>
     </div>
